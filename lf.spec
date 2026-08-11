@@ -1,9 +1,9 @@
 %define debug_package %{nil}
 
 Name:		lf
-Version:	r41
+Version:	41
 Release:	3
-Source0:	https://github.com/gokcehan/lf/archive/%{version}/%{name}-%{version}.tar.gz
+Source0:	https://github.com/gokcehan/lf/archive/r%{version}/%{name}-r%{version}.tar.gz
 Source1:	vendor.tar.gz
 Summary:	A terminal file manager written in Go inspired by ranger
 URL:		https://github.com/gokcehan/lf
@@ -17,10 +17,10 @@ inspiration from ranger file manager. See faq for more information and
 tutorial for a gentle introduction with screencasts.
 
 %prep
-%autosetup -p1 -a1
+%autosetup -n %{name}-r%{version} -a1
 
 %build
-go build -v -x -trimpath -ldflags="-s -w -X main.gVersion=%{version}" -o %{name}
+go build -v -x -trimpath -ldflags="-s -w -X main.gVersion=r%{version}" -o %{name}
 
 %install
 install -Dm0755 %{name}      %{buildroot}%{_bindir}/lf
