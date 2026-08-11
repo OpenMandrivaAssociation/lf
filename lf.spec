@@ -2,7 +2,7 @@
 
 Name:		lf
 Version:	r41
-Release:	2
+Release:	3
 Source0:	https://github.com/gokcehan/lf/archive/%{version}/%{name}-%{version}.tar.gz
 Source1:	vendor.tar.gz
 Summary:	A terminal file manager written in Go inspired by ranger
